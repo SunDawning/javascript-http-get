@@ -139,3 +139,4 @@ function get(input){
         return nodeGet(url,onLoad)
     }
 }
+export{get}
