@@ -6,11 +6,26 @@
     <meta http-equiv="Content-Type" name="viewport" content="width=device-width"/>
   </head>
   <body>
-    <div>get("https://www.google.com",function(text){document.write(text)})</div>
+    <div style="white-space:pre;font-family:monospace;">
+      get({
+          url:"https://www.google.com",
+          onLoad:function(text){
+              document.write(text)},
+          hostnamesUseProxy:[
+              "google.com"
+          ]
+      })
+    </div>
     <script type="text/javascript" src="./get.js"></script>
     <script type="text/javascript">
-      get("https://www.google.com",function(text){
-        document.write(text)})
+      get({
+          url:"https://www.google.com",
+          onLoad:function(text){
+              document.write(text)},
+          hostnamesUseProxy:[
+              "google.com"
+          ]
+      })
     </script>
   </body>
 </html>

@@ -29,7 +29,11 @@ either expressed or implied, of any organization or project.
 /*
 get({
     url:"https://www.google.com",
-    onLoad:console.log
+    onLoad:function(text){
+        document.write(text)},
+    hostnamesUseProxy:[
+        "google.com"
+    ]
 })
  */
 function get(input){
