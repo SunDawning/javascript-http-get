@@ -94,6 +94,7 @@ function get(input){
                     onLoad(request["responseText"])}}
             request["open"]("GET",url,true)
             request["send"](null)
+            return request
         }
         return xmlGet(url,onLoad)
     }
