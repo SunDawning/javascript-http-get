@@ -1,5 +1,7 @@
 一个用JavaScript编写的，用于获取网络资源URI的GET函数，就这样。
 
+https://sundawning.gitee.io/javascript-http-get/
+
 #+BEGIN_SRC html
 <!doctype html>
 <html>

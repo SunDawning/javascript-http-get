@@ -40,6 +40,8 @@ function get(input){
     input=input||{}
     let url=input["url"]
     let onLoad=input["onLoad"]
+    let onError=input["onError"]
+    let onReadyStateChange=input["onReadyStateChange"]
     if(!url){return}
     if(!onLoad){return}
     if(typeof(url)!=="string"){return}
@@ -81,6 +83,7 @@ function get(input){
             var request=new XMLHttpRequest()
             if(!fromRetry){
                 request["addEventListener"]("error",function(event){
+                    if(onError){onError(event)}
                     getByStandardUrl(xmlGet,url,onLoad)
                 })
                 url=convertStandardUrl(url,[
@@ -90,6 +93,7 @@ function get(input){
                 ])
             }
             request["onreadystatechange"]=function(event){
+                if(onReadyStateChange){onReadyStateChange(event)}
                 if(request["readyState"]===4&&request["status"]===200){
                     onLoad(request["responseText"])}}
             request["open"]("GET",url,true)
